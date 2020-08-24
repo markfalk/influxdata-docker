@@ -1,7 +1,8 @@
 FROM buildpack-deps:buster-curl
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp \
+           smartmontools procps lm-sensors && \
     rm -rf /var/lib/apt/lists/*
 
 RUN set -ex && \
